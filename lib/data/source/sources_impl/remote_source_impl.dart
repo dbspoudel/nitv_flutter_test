@@ -64,7 +64,7 @@ class RemoteSourceImpl implements RemoteSource {
           } else {
             final String apiKey = appConfig.configModel.newsApiKey;
             requestOption.baseUrl = appConfig.configModel.baseUrl;
-            requestOption.queryParameters.addAll({"apiKey": apiKey});
+            requestOption.queryParameters.addAll({"apiKey": apiKey, "country":"us"});
             return handler.next(requestOption);
           }
         },

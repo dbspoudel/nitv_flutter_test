@@ -14,18 +14,22 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+News _$NewsFromJson(Map<String, dynamic> json) {
+  return _news.fromJson(json);
+}
+
 /// @nodoc
 class _$NewsTearOff {
   const _$NewsTearOff();
 
   _news call(
-      {@JsonKey(name: 'author') required String authorName,
-      @JsonKey(name: 'title') required String title,
-      @JsonKey(name: 'description') required String description,
-      @JsonKey(name: 'url') required String url,
-      @JsonKey(name: 'urlToImage') required String imageUrl,
-      @JsonKey(name: 'publishedAt') required String publishedAt,
-      @JsonKey(name: 'content') required String content}) {
+      {@JsonKey(name: 'author') required String? authorName,
+      @JsonKey(name: 'title') required String? title,
+      @JsonKey(name: 'description') required String? description,
+      @JsonKey(name: 'url') required String? url,
+      @JsonKey(name: 'urlToImage') required String? imageUrl,
+      @JsonKey(name: 'publishedAt') required String? publishedAt,
+      @JsonKey(name: 'content') required String? content}) {
     return _news(
       authorName: authorName,
       title: title,
@@ -36,6 +40,10 @@ class _$NewsTearOff {
       content: content,
     );
   }
+
+  News fromJson(Map<String, Object?> json) {
+    return News.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -44,20 +52,21 @@ const $News = _$NewsTearOff();
 /// @nodoc
 mixin _$News {
   @JsonKey(name: 'author')
-  String get authorName => throw _privateConstructorUsedError;
+  String? get authorName => throw _privateConstructorUsedError;
   @JsonKey(name: 'title')
-  String get title => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'description')
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'url')
-  String get url => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
   @JsonKey(name: 'urlToImage')
-  String get imageUrl => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'publishedAt')
-  String get publishedAt => throw _privateConstructorUsedError;
+  String? get publishedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'content')
-  String get content => throw _privateConstructorUsedError;
+  String? get content => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $NewsCopyWith<News> get copyWith => throw _privateConstructorUsedError;
 }
@@ -67,13 +76,13 @@ abstract class $NewsCopyWith<$Res> {
   factory $NewsCopyWith(News value, $Res Function(News) then) =
       _$NewsCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'author') String authorName,
-      @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'description') String description,
-      @JsonKey(name: 'url') String url,
-      @JsonKey(name: 'urlToImage') String imageUrl,
-      @JsonKey(name: 'publishedAt') String publishedAt,
-      @JsonKey(name: 'content') String content});
+      {@JsonKey(name: 'author') String? authorName,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'description') String? description,
+      @JsonKey(name: 'url') String? url,
+      @JsonKey(name: 'urlToImage') String? imageUrl,
+      @JsonKey(name: 'publishedAt') String? publishedAt,
+      @JsonKey(name: 'content') String? content});
 }
 
 /// @nodoc
@@ -98,31 +107,31 @@ class _$NewsCopyWithImpl<$Res> implements $NewsCopyWith<$Res> {
       authorName: authorName == freezed
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imageUrl: imageUrl == freezed
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       publishedAt: publishedAt == freezed
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -133,13 +142,13 @@ abstract class _$newsCopyWith<$Res> implements $NewsCopyWith<$Res> {
       __$newsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'author') String authorName,
-      @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'description') String description,
-      @JsonKey(name: 'url') String url,
-      @JsonKey(name: 'urlToImage') String imageUrl,
-      @JsonKey(name: 'publishedAt') String publishedAt,
-      @JsonKey(name: 'content') String content});
+      {@JsonKey(name: 'author') String? authorName,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'description') String? description,
+      @JsonKey(name: 'url') String? url,
+      @JsonKey(name: 'urlToImage') String? imageUrl,
+      @JsonKey(name: 'publishedAt') String? publishedAt,
+      @JsonKey(name: 'content') String? content});
 }
 
 /// @nodoc
@@ -165,37 +174,37 @@ class __$newsCopyWithImpl<$Res> extends _$NewsCopyWithImpl<$Res>
       authorName: authorName == freezed
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imageUrl: imageUrl == freezed
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       publishedAt: publishedAt == freezed
           ? _value.publishedAt
           : publishedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       content: content == freezed
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_news extends _news {
   const _$_news(
       {@JsonKey(name: 'author') required this.authorName,
@@ -207,27 +216,29 @@ class _$_news extends _news {
       @JsonKey(name: 'content') required this.content})
       : super._();
 
+  factory _$_news.fromJson(Map<String, dynamic> json) => _$$_newsFromJson(json);
+
   @override
   @JsonKey(name: 'author')
-  final String authorName;
+  final String? authorName;
   @override
   @JsonKey(name: 'title')
-  final String title;
+  final String? title;
   @override
   @JsonKey(name: 'description')
-  final String description;
+  final String? description;
   @override
   @JsonKey(name: 'url')
-  final String url;
+  final String? url;
   @override
   @JsonKey(name: 'urlToImage')
-  final String imageUrl;
+  final String? imageUrl;
   @override
   @JsonKey(name: 'publishedAt')
-  final String publishedAt;
+  final String? publishedAt;
   @override
   @JsonKey(name: 'content')
-  final String content;
+  final String? content;
 
   @override
   String toString() {
@@ -266,40 +277,47 @@ class _$_news extends _news {
   @override
   _$newsCopyWith<_news> get copyWith =>
       __$newsCopyWithImpl<_news>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_newsToJson(this);
+  }
 }
 
 abstract class _news extends News {
   const factory _news(
-      {@JsonKey(name: 'author') required String authorName,
-      @JsonKey(name: 'title') required String title,
-      @JsonKey(name: 'description') required String description,
-      @JsonKey(name: 'url') required String url,
-      @JsonKey(name: 'urlToImage') required String imageUrl,
-      @JsonKey(name: 'publishedAt') required String publishedAt,
-      @JsonKey(name: 'content') required String content}) = _$_news;
+      {@JsonKey(name: 'author') required String? authorName,
+      @JsonKey(name: 'title') required String? title,
+      @JsonKey(name: 'description') required String? description,
+      @JsonKey(name: 'url') required String? url,
+      @JsonKey(name: 'urlToImage') required String? imageUrl,
+      @JsonKey(name: 'publishedAt') required String? publishedAt,
+      @JsonKey(name: 'content') required String? content}) = _$_news;
   const _news._() : super._();
+
+  factory _news.fromJson(Map<String, dynamic> json) = _$_news.fromJson;
 
   @override
   @JsonKey(name: 'author')
-  String get authorName;
+  String? get authorName;
   @override
   @JsonKey(name: 'title')
-  String get title;
+  String? get title;
   @override
   @JsonKey(name: 'description')
-  String get description;
+  String? get description;
   @override
   @JsonKey(name: 'url')
-  String get url;
+  String? get url;
   @override
   @JsonKey(name: 'urlToImage')
-  String get imageUrl;
+  String? get imageUrl;
   @override
   @JsonKey(name: 'publishedAt')
-  String get publishedAt;
+  String? get publishedAt;
   @override
   @JsonKey(name: 'content')
-  String get content;
+  String? get content;
   @override
   @JsonKey(ignore: true)
   _$newsCopyWith<_news> get copyWith => throw _privateConstructorUsedError;
