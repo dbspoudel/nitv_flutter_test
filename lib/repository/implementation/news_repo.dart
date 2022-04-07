@@ -3,7 +3,7 @@ import 'package:nitv_flutter_test/data/source/remote_source.dart';
 import 'package:nitv_flutter_test/models/news.dart';
 import 'package:nitv_flutter_test/repository/i_news_repo.dart';
 
-@lazySingleton(as: NewsRepo)
+@LazySingleton(as: NewsRepo)
 class NewsRepoImp implements NewsRepo {
   final RemoteSource remoteSource;
 

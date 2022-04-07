@@ -14,10 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-News _$NewsFromJson(Map<String, dynamic> json) {
-  return _news.fromJson(json);
-}
-
 /// @nodoc
 class _$NewsTearOff {
   const _$NewsTearOff();
@@ -39,10 +35,6 @@ class _$NewsTearOff {
       publishedAt: publishedAt,
       content: content,
     );
-  }
-
-  News fromJson(Map<String, Object?> json) {
-    return News.fromJson(json);
   }
 }
 
@@ -66,7 +58,6 @@ mixin _$News {
   @JsonKey(name: 'content')
   String get content => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $NewsCopyWith<News> get copyWith => throw _privateConstructorUsedError;
 }
@@ -204,7 +195,7 @@ class __$newsCopyWithImpl<$Res> extends _$NewsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_news extends _news {
   const _$_news(
       {@JsonKey(name: 'author') required this.authorName,
@@ -215,8 +206,6 @@ class _$_news extends _news {
       @JsonKey(name: 'publishedAt') required this.publishedAt,
       @JsonKey(name: 'content') required this.content})
       : super._();
-
-  factory _$_news.fromJson(Map<String, dynamic> json) => _$$_newsFromJson(json);
 
   @override
   @JsonKey(name: 'author')
@@ -277,11 +266,6 @@ class _$_news extends _news {
   @override
   _$newsCopyWith<_news> get copyWith =>
       __$newsCopyWithImpl<_news>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_newsToJson(this);
-  }
 }
 
 abstract class _news extends News {
@@ -294,8 +278,6 @@ abstract class _news extends News {
       @JsonKey(name: 'publishedAt') required String publishedAt,
       @JsonKey(name: 'content') required String content}) = _$_news;
   const _news._() : super._();
-
-  factory _news.fromJson(Map<String, dynamic> json) = _$_news.fromJson;
 
   @override
   @JsonKey(name: 'author')

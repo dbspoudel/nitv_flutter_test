@@ -15,6 +15,4 @@ class News with _$News {
     @JsonKey(name: 'publishedAt') required final String publishedAt,
     @JsonKey(name: 'content') required final String content,
   }) = _news;
-
-  factory News.fromJson(Map<String, dynamic> json) => _$NewsFromJson(json);
 }
