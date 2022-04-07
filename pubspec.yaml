@@ -15,9 +15,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   freezed_annotation: ^1.1.0
   injectable: ^1.5.3
+  get_it: ^7.2.0
   dio: ^4.0.4
   connectivity_plus: ^2.2.1
   logger: ^1.1.0
+  flutter_bloc: ^8.0.1
 
 
 dev_dependencies:

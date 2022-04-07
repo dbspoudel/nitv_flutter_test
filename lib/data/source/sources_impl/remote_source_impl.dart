@@ -1,6 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:nitv_flutter_test/core/app_config/app_config.dart';
 import 'package:nitv_flutter_test/core/app_logger.dart';
 import 'package:nitv_flutter_test/core/exceptions/all_dio_exceptions.dart';
 import 'package:nitv_flutter_test/core/exceptions/app_exceptions.dart';
@@ -11,10 +12,12 @@ import '../remote_source.dart';
 class RemoteSourceImpl implements RemoteSource {
   Dio dio;
   Connectivity connectivity;
+  AppConfig appConfig;
 
   RemoteSourceImpl({
     required this.dio,
     required this.connectivity,
+    required this.appConfig,
   }) {
     _enable();
   }
@@ -59,9 +62,9 @@ class RemoteSourceImpl implements RemoteSource {
           if (connection == ConnectivityResult.none) {
             handler.reject(DioError(requestOptions: requestOption, error: NoInternetException));
           } else {
-            final token = authCubit.userSession?.accessToken ?? '';
+            final String apiKey = appConfig.configModel.newsApiKey;
             requestOption.baseUrl = appConfig.configModel.baseUrl;
-            requestOption.headers['Authorization'] = 'Bearer $token';
+            requestOption.queryParameters.addAll({"apiKey": apiKey});
             return handler.next(requestOption);
           }
         },
